@@ -53,7 +53,7 @@ const CadastroFornecedor2 = () => {
                 <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
             </div>
 
-            <Link>
+            <Link to={"/fornecedor/home"}>
               Cadastrar minha farmácia!
             </Link>
 

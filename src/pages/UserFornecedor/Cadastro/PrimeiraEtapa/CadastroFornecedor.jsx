@@ -43,7 +43,7 @@ const CadastroFornecedor = () => {
             </div>
 
 
-            <Link>
+            <Link to={"/fornecedor/cadastro/2"}>
               <button>
                 Próxima etapa
               </button>

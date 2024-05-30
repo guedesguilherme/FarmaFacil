@@ -38,6 +38,10 @@ const CadastroCliente = () => {
                 <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
             </div>
 
+            <Link to={"/cliente/home"} className="primary-btn">
+              Cadastrar
+            </Link>
+
         </div>
 
       </form>

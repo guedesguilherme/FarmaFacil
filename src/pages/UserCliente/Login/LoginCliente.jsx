@@ -37,7 +37,7 @@ const LoginCliente = () => {
             </div>
 
 
-            <Link>
+            <Link to={"/cliente/home"} className="primary-btn">
               Entrar
             </Link>
 

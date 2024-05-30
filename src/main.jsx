@@ -15,6 +15,7 @@ import './index.css'
 
 //Import do index
 import Index from './pages/Inicio/Index.jsx'
+import IndexFornecedor from './pages/Inicio/IndexFornecedor.jsx'
 
 //Import das pages do cliente
 import HomeCliente from "./pages/UserCliente/Home/HomeCliente.jsx"
@@ -25,6 +26,7 @@ import LoginCliente from './pages/UserCliente/Login/LoginCliente.jsx'
 import HomeFornecedor from "./pages/UserFornecedor/Home/HomeFornecedor.jsx"
 import CadastroFornecedor from "./pages/UserFornecedor/Cadastro/PrimeiraEtapa/CadastroFornecedor.jsx"
 import CadastroFornecedor2 from "./pages/UserFornecedor/Cadastro/SegundaEtapa/CadastroFornecedor2.jsx"
+import LoginFornecedor from './pages/UserFornecedor/Login/LoginFornecedor.jsx'
 
 //-----------------
 
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Index/>
+      },
+      {
+        path: "/fornecedor",
+        element: <IndexFornecedor/>
       },
 
       //Rotas do cliente
@@ -70,7 +76,8 @@ const router = createBrowserRouter([
           element: <CadastroFornecedor2 />
         },
       {
-
+        path: "/fornecedor/entrar",
+        element: <LoginFornecedor/>
       },
 
     ]

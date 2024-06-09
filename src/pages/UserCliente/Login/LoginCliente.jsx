@@ -11,12 +11,15 @@ const LoginCliente = () => {
 
       <div className="topo-page">
 
-        <Link>
-          <img src="" alt="" srcset="" className='btn-voltar'/>
+        <Link to={"/"}>
+          <img src="../../../../public/img/icons/back.svg" alt="Voltar" srcset="" className='btn-voltar'/>
         </Link>
 
         <h2>Entrar</h2>
-        <h2 className='primary-text-btn'>Cadastrar</h2>
+
+        <Link to={"/cliente/cadastro"}>
+          <h3 className="primary-text-btn">Cadastrar</h3>  
+        </Link>
 
       </div>
 
@@ -25,14 +28,14 @@ const LoginCliente = () => {
 
         <div className="form-control">
 
-            <label for="telefone" class="labels">Insira seu número de telefone abaixo.</label>
-            <input type="text" name="telefone" id="" class="inputs"/>
+            <label for="telefone" class="labels">Insira e-mail cadastrado.</label>
+            <input type="text" name="telefone" id="" placeholder="Insira seu e-mail aqui" class="inputs"/>
 
-            <label for="senha" class="labels">Escolha uma senha abaixo.</label>
-            <input type="text" name="senha" id="" class="inputs"/>
+            <label for="senha" class="labels">Insira sua senha.</label>
+            <input type="text" name="senha" id="" placeholder="Insira seu e-mail aqui" class="inputs"/>
 
             <div class="manter-conectado">
-                <input type="checkbox" name="manter-conectado" id=""/>
+                <input type="checkbox" name="manter-conectado" className="checkbox-manter-conectado"/>
                 <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
             </div>
 
@@ -41,11 +44,17 @@ const LoginCliente = () => {
               Entrar
             </Link>
 
+            <div id="entrar-com-email">
+              <Link to={"/cliente/entrar/email"} className="secondary-btn">
+                Entrar com e-mail
+              </Link>
+            </div>
+
         </div>
 
       </form>
 
-      <span id="esquece-senha">Esqueceu sua senha?</span>
+      <span id="esquece-senha" className="tertiary-text-btn">Esqueceu sua senha?</span>
 
     </div>
   )

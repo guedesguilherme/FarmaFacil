@@ -11,12 +11,15 @@ const CadastroCliente = () => {
 
       <div className="topo-page">
 
-        <Link>
-          <img src="" alt="" srcset="" className='btn-voltar'/>
+        <Link to={"/"}>
+          <img src="../../../../public/img/icons/back.svg" alt="" srcset="" className='btn-voltar'/>
         </Link>
 
         <h2>Cadastrar</h2>
-        <h3 className="primary-text-btn">Entrar</h3>
+
+        <Link to={"/cliente/entrar"}>
+          <h3 className="primary-text-btn">Entrar</h3>  
+        </Link>
 
       </div>
 
@@ -24,17 +27,20 @@ const CadastroCliente = () => {
 
         <div className="form-control">
 
-            <label for="nome" class="labels">Insira seu nome completo abaixo.</label>
-            <input type="text" name="nome" id="" class="inputs"/>
+            <label for="nome" class="labels">Nome completo</label>
+            <input type="text" name="nome" id="" placeholder="Insira seu nome aqui" class="inputs"/>
 
-            <label for="telefone" class="labels">Insira seu número de telefone abaixo.</label>
-            <input type="text" name="telefone" id="" class="inputs"/>
+            <label for="telefone" class="labels">E-mail</label>
+            <input type="text" name="telefone" id="" placeholder="Insira seu melhor e-mail aqui" class="inputs"/>
 
-            <label for="senha" class="labels">Escolha uma senha abaixo.</label>
-            <input type="text" name="senha" id="" class="inputs"/>
+            <label for="senha" class="labels">Escolha uma senha</label>
+            <input type="text" name="senha" id="" placeholder="Defina uma senha aqui" class="inputs"/>
+
+            <label for="senha" class="labels">Repita a senha</label>
+            <input type="text" name="senha" id="" placeholder="Repita a senha definida aqui" class="inputs"/>
 
             <div class="manter-conectado">
-                <input type="checkbox" name="manter-conectado" id=""/>
+                <input type="checkbox" name="manter-conectado" className="checkbox-manter-conectado"/>
                 <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
             </div>
 
@@ -45,9 +51,6 @@ const CadastroCliente = () => {
         </div>
 
       </form>
-
-      <span id="esquece-senha">Esqueceu sua senha?</span>
-
     </div>
   )
 }

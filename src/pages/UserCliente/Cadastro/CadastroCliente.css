@@ -1,0 +1,32 @@
+.topo-page{
+    display: flex;
+    gap: 5rem;
+}
+
+.form-control{
+    max-width: 375px;
+}
+
+#h3-cadastro-fornecedor{
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.labels{
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.manter-conectado{
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox-manter-conectado{
+    width: 1rem;
+    margin-right: 1rem;
+}

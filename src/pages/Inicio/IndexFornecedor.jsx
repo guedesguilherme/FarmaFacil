@@ -28,6 +28,12 @@ const Index = () => {
                 Não, quero me cadastrar
         </Link>
 
+        <div id="container-footer-inicio">
+            <Link className="primary-text-btn" to={"/"}>
+                Sou cliente
+            </Link>
+          </div>
+
     </div>
     </div>
   )

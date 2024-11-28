@@ -30,7 +30,7 @@ const Index = () => {
 
         <div id="container-footer-inicio">
             <Link className="primary-text-btn" to={"/"}>
-                Sou cliente
+                Sou cliente.
             </Link>
           </div>
 

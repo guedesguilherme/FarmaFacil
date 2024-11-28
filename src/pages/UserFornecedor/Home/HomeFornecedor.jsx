@@ -6,11 +6,13 @@ import "./HomeFornecedor.css"
 
 const HomeFornecedor = () => {
   return (
-    <div className="container">
+    <div className="container-home-fornecedor">
 
       <div className="header">
         <h2>Olá</h2>
-        <img src="../../../../public/img/icons/logout.svg" alt="" />
+        <Link to={"/fornecedor"}>
+          <img src="../../../../public/img/icons/logout.svg" alt="" />
+        </Link>
       </div>
 
       <Link className="secondary-btn">Cadastrar novo produto</Link>
@@ -20,25 +22,25 @@ const HomeFornecedor = () => {
         <div className="card">
           <h3>Gerencie seu estoque</h3>
 
-          <p>Produtos em estoque</p>
+          <p className="p-home-fornecedor">Produtos em estoque</p>
           <h5>10</h5>
 
-          <p>Produto em menor qtd</p>
+          <p className="p-home-fornecedor">Produto em menor qtd</p>
           <h5>Dipirona</h5>
 
-          <Link className="primary-btn">button</Link>
+          <Link className="primary-btn" to={"/fornecedor/gerenciar/produtos"}>Gerenciar estoque</Link>
         </div>
 
         <div className="card">
           <h3>Gerencie seus pedidos</h3>
 
-          <p>Pedidos pendentes</p>
+          <p className="p-home-fornecedor">Pedidos pendentes</p>
           <h5>10</h5>
 
-          <p>Pedidos concluídos</p>
+          <p className="p-home-fornecedor">Pedidos concluídos</p>
           <h5>10</h5>
 
-          <Link className="primary-btn">button</Link>
+          <Link className="primary-btn">Gerenciar pedidos</Link>
         </div>
 
       </div>

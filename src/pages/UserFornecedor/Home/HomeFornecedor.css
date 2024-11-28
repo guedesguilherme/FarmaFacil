@@ -1,3 +1,19 @@
+.container-home-fornecedor{
+    display: flex;
+    margin: 1rem;
+    width: 375px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
 .card-container{
     display: flex;
     flex-direction: column;
@@ -9,5 +25,15 @@
     border: 3px solid #2F88FF;
     border-radius: 10px;
     padding: 1rem;
+    margin-top: 1rem;
+}
+
+h5{
+    color: #A3AAB5;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.p-home-fornecedor{
     margin-top: 1rem;
 }

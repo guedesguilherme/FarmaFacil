@@ -1,0 +1,33 @@
+.tabela-gerenciar-produtos{
+    border: 3px solid #2F88FF;
+    text-align: left;
+    border-radius: 10px;
+    padding-top: 1rem;
+    padding-bottom: 0.1rem;
+    border-spacing: 0;
+}
+
+.headline-estoque-fornecedor{
+    align-self: flex-start;
+}
+
+.tabela-gerenciar-produtos td{
+    border: 1px solid #EEF5FF;
+    padding: 0.2rem;
+}
+
+.tabela-gerenciar-produtos th{
+    padding: 0.2rem;
+}
+
+.tabela-gerenciar-produtos tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.tabela-gerenciar-produtos tbody tr:nth-child(even) {
+    background-color: #EEF5FF;
+}
+
+.tabela-gerenciar-produtos thead{
+    justify-content: flex-start;
+}

@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom'
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import './App.css'
 
@@ -17,6 +18,7 @@ function App() {
     <>
       <div className='App'>
         <Outlet />
+        <SpeedInsights />
       </div>
     </>
   )

@@ -49,6 +49,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # Executar o SonarScanner
+      - name: Run SonarScanner
+        run: sonar-scanner
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
       # Deploy do projeto (opcional, ajustar conforme necessário)
       - name: Deploy to Vercel
         run: npx vercel --prod --yes

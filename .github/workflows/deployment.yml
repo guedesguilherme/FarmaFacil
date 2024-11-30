@@ -4,24 +4,53 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
+      # Checkout do código
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Configurar Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
+      # Instalar dependências do projeto
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
+      # Rodar os testes unitários
+      - name: Run unit tests
         run: npm test
 
+      # Executar os testes E2E com Cypress
+      - name: Run Cypress tests
+        run: npx cypress run
+
+      # Upload de artefatos do Cypress (opcional, caso ocorram falhas)
+      - name: Upload Cypress artifacts
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-artifacts
+          path: |
+            cypress/screenshots
+            cypress/videos
+
+      # Construir o projeto
       - name: Build project
         run: npm run build
+
+      # Deploy do projeto (opcional, ajustar conforme necessário)
+      - name: Deploy to Vercel
+        run: npx vercel --prod
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

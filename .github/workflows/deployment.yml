@@ -49,7 +49,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # Deploy do projeto (opcional, ajustar conforme necessário).
+      # Deploy do projeto (opcional, ajustar conforme necessário)
       - name: Deploy to Vercel
         run: npx vercel --prod --yes
         env:

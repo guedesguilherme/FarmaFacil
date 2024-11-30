@@ -23,12 +23,6 @@ jobs:
         with:
           node-version: '18'
 
-      # Configurar Java 17
-      - name: Set up Java 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-
       # Instalar dependências do projeto
       - name: Install dependencies
         run: npm install
@@ -57,7 +51,8 @@ jobs:
 
       # Instalar o SonarScanner
       - name: Install SonarScanner
-        run: npm install -g sonar-scanner
+        run: |
+          npm install -g sonar-scanner
 
       # Executar o SonarScanner
       - name: Run SonarScanner

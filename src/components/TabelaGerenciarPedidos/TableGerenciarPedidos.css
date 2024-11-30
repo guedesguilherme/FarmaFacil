@@ -1,0 +1,33 @@
+.tabela-gerenciar-pedidos{
+    border: 3px solid #2F88FF;
+    text-align: left;
+    border-radius: 10px;
+    padding-top: 1rem;
+    padding-bottom: 0.1rem;
+    border-spacing: 0;
+}
+
+.headline-estoque-fornecedor{
+    align-self: flex-start;
+}
+
+.tabela-gerenciar-pedidos td{
+    border: 1px solid #EEF5FF;
+    padding: 0.2rem;
+}
+
+.tabela-gerenciar-pedidos th{
+    padding: 0.2rem;
+}
+
+.tabela-gerenciar-pedidos tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.tabela-gerenciar-pedidos tbody tr:nth-child(even) {
+    background-color: #EEF5FF;
+}
+
+.tabela-gerenciar-pedidos thead{
+    justify-content: flex-start;
+}

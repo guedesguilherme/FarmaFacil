@@ -1,58 +1,131 @@
-import { Link } from "react-router-dom";
-
-import React from 'react'
-
-import "./CadastroCliente.css"
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import "./CadastroCliente.css";
 
 const CadastroCliente = () => {
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmaSenha, setConfirmaSenha] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleCadastro = async (e) => {
+    e.preventDefault();
+
+    if (senha !== confirmaSenha) {
+      setError("As senhas não coincidem.");
+      return;
+    }
+
+    try {
+      // Fazendo a requisição para a API
+      const response = await axios.post("http://localhost:3000/usuarios/auth/register", {
+        nome,
+        email,
+        senha,
+      });
+
+      // Redirecionar para a página de login após cadastro bem-sucedido
+      navigate("/cliente/entrar");
+    } catch (error) {
+      if (error.response) {
+        setError(error.response.data.msg); // Mostra mensagem de erro do back-end
+      } else {
+        setError("Erro ao conectar ao servidor.");
+      }
+    }
+  };
+
   return (
     <div className="container">
-
-
       <div className="topo-page">
-
         <Link to={"/"}>
-          <img src="../../../../public/img/icons/back.svg" alt="" srcset="" className='btn-voltar'/>
+          <img
+            src="../../../../public/img/icons/back.svg"
+            alt="Voltar"
+            className="btn-voltar"
+          />
         </Link>
 
         <h2>Cadastrar</h2>
 
         <Link to={"/cliente/entrar"}>
-          <h3 className="primary-text-btn">Entrar</h3>  
+          <h3 className="primary-text-btn">Entrar</h3>
         </Link>
-
       </div>
 
-      <form action="">
-
+      <form onSubmit={handleCadastro}>
         <div className="form-control">
+          <label htmlFor="nome" className="labels">
+            Nome completo
+          </label>
+          <input
+            type="text"
+            name="nome"
+            placeholder="Insira seu nome aqui"
+            className="inputs"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
 
-            <label for="nome" class="labels">Nome completo</label>
-            <input type="text" name="nome" id="" placeholder="Insira seu nome aqui" class="inputs"/>
+          <label htmlFor="email" className="labels">
+            E-mail
+          </label>
+          <input
+            type="text"
+            name="email"
+            placeholder="Insira seu melhor e-mail aqui"
+            className="inputs"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-            <label for="telefone" class="labels">E-mail</label>
-            <input type="text" name="telefone" id="" placeholder="Insira seu melhor e-mail aqui" class="inputs"/>
+          <label htmlFor="senha" className="labels">
+            Escolha uma senha
+          </label>
+          <input
+            type="password"
+            name="senha"
+            placeholder="Defina uma senha aqui"
+            className="inputs"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
 
-            <label for="senha" class="labels">Escolha uma senha</label>
-            <input type="text" name="senha" id="" placeholder="Defina uma senha aqui" class="inputs"/>
+          <label htmlFor="confirmaSenha" className="labels">
+            Repita a senha
+          </label>
+          <input
+            type="password"
+            name="confirmaSenha"
+            placeholder="Repita a senha definida aqui"
+            className="inputs"
+            value={confirmaSenha}
+            onChange={(e) => setConfirmaSenha(e.target.value)}
+          />
 
-            <label for="senha" class="labels">Repita a senha</label>
-            <input type="text" name="senha" id="" placeholder="Repita a senha definida aqui" class="inputs"/>
+          <div className="manter-conectado">
+            <input
+              type="checkbox"
+              name="manter-conectado"
+              className="checkbox-manter-conectado"
+            />
+            <label htmlFor="manter-conectado" id="manter-conectado-label">
+              Mantenha-me conectado.
+            </label>
+          </div>
 
-            <div class="manter-conectado">
-                <input type="checkbox" name="manter-conectado" className="checkbox-manter-conectado"/>
-                <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
-            </div>
+          {error && <p className="error-msg">{error}</p>}
 
-            <Link to={"/cliente/home"} className="primary-btn">
-              Cadastrar
-            </Link>
-
+          <button type="submit" className="primary-btn">
+            Cadastrar
+          </button>
         </div>
-
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default CadastroCliente
+export default CadastroCliente;

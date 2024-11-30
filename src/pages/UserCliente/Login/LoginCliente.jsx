@@ -1,63 +1,100 @@
-import { Link } from "react-router-dom";
-
-import React from 'react'
-
-import "./LoginCliente.css"
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import "./LoginCliente.css";
 
 const LoginCliente = () => {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Fazendo a requisição para a API
+      const response = await axios.post("http://localhost:3000/usuarios/auth/login", {
+        email,
+        senha,
+      });
+
+      // Salvando o token no localStorage
+      const { token } = response.data;
+      localStorage.setItem("authToken", token);
+
+      // Navegando para a página inicial do cliente
+      navigate("/cliente/home");
+    } catch (error) {
+      if (error.response) {
+        setError(error.response.data.msg); // Mostra mensagem de erro do back-end
+      } else {
+        setError("Erro ao conectar ao servidor.");
+      }
+    }
+  };
+
   return (
     <div className="container">
-
-
       <div className="topo-page">
-
         <Link to={"/"}>
-          <img src="../../../../public/img/icons/back.svg" alt="Voltar" srcset="" className='btn-voltar'/>
+          <img
+            src="../../../../public/img/icons/back.svg"
+            alt="Voltar"
+            className="btn-voltar"
+          />
         </Link>
-
         <h2>Entrar</h2>
-
         <Link to={"/cliente/cadastro"}>
-          <h3 className="primary-text-btn">Cadastrar</h3>  
+          <h3 className="primary-text-btn">Cadastrar</h3>
         </Link>
-
       </div>
 
-
-      <form action="">
-
+      <form onSubmit={handleLogin}>
         <div className="form-control">
+          <label htmlFor="email" className="labels">
+            Insira e-mail cadastrado.
+          </label>
+          <input
+            type="text"
+            name="email"
+            placeholder="Insira seu e-mail aqui"
+            className="inputs"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-            <label for="telefone" class="labels">Insira e-mail cadastrado.</label>
-            <input type="text" name="telefone" id="" placeholder="Insira seu e-mail aqui" class="inputs"/>
+          <label htmlFor="senha" className="labels">
+            Insira sua senha.
+          </label>
+          <input
+            type="password"
+            name="senha"
+            placeholder="Insira sua senha aqui"
+            className="inputs"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
 
-            <label for="senha" class="labels">Insira sua senha.</label>
-            <input type="text" name="senha" id="" placeholder="Insira seu e-mail aqui" class="inputs"/>
+          {error && <p className="error-msg">{error}</p>}
 
-            <div class="manter-conectado">
-                <input type="checkbox" name="manter-conectado" className="checkbox-manter-conectado"/>
-                <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
-            </div>
+          <button type="submit"  className="primary-btn">
+            Entrar
+          </button>
 
-
-            <Link to={"/cliente/home"} className="primary-btn">
-              Entrar
+          <div id="entrar-com-email">
+            <Link to={"/cliente/entrar/email"} className="secondary-btn">
+              Entrar com SMS
             </Link>
-
-            <div id="entrar-com-email">
-              <Link to={"/cliente/entrar/email"} className="secondary-btn">
-                Entrar com e-mail
-              </Link>
-            </div>
-
+          </div>
         </div>
-
       </form>
 
-      <span id="esquece-senha" className="tertiary-text-btn">Esqueceu sua senha?</span>
-
+      <span id="esquece-senha" className="tertiary-text-btn">
+        Esqueceu sua senha?
+      </span>
     </div>
-  )
-}
+  );
+};
 
-export default LoginCliente
+export default LoginCliente;

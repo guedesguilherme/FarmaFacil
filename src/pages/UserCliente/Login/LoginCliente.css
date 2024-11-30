@@ -1,3 +1,18 @@
+.container {
+    display: flex;
+    margin: 1rem;
+    width: 375px;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.form-control{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+
 #entrar-com-email{
-    margin-top: 5rem;
+    padding: 40px!important;
 }

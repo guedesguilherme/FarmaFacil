@@ -1,4 +1,4 @@
-import TableGerenciarProdutos from '../../../components/TabelaGerenciarProdutos/TableGerenciarProdutos'
+import TableGerenciarPedidos from '../../../components/TabelaGerenciarPedidos/TableGerenciarPedidos'
 
 import React from 'react'
 
@@ -8,7 +8,7 @@ const GerenciarPedidos = () => {
   return (
     <div className='container-pedidos-fornecedor'>
 
-      <TableGerenciarProdutos />
+      <TableGerenciarPedidos />
 
       <div className='options-footer'>
 

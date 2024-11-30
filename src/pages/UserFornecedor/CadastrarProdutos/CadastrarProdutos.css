@@ -1,0 +1,46 @@
+.container-produtos-fornecedor {
+    display: flex;
+    margin: 1rem;
+    width: 375px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 25px;
+}
+
+.info-gerais {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding e borda dentro da largura */
+}
+
+.info-gerais > div {
+    flex: 1; /* Faz os itens dividirem o espaço igualmente */
+    min-width: 0; /* Garante que os elementos não estourem o espaço */
+}
+
+input {
+    height: 100%;
+    width: 100%; /* Os inputs ocupam 100% do espaço do container pai */
+    box-sizing: border-box;
+}

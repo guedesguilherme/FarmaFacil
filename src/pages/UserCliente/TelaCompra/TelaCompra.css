@@ -1,0 +1,21 @@
+.container-compra-fornecedor {
+    display: flex;
+    margin: 1rem;
+    width: 375px;
+    height: 100vh;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.preco-e-btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+

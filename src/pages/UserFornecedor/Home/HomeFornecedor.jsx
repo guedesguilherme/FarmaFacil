@@ -15,7 +15,7 @@ const HomeFornecedor = () => {
         </Link>
       </div>
 
-      <Link className="secondary-btn">Cadastrar novo produto</Link>
+      <Link to={"/fornecedor/cadastrar/produtos"} className="secondary-btn">Cadastrar novo produto</Link>
 
       <div className="card-container">
 
@@ -40,7 +40,7 @@ const HomeFornecedor = () => {
           <p className="p-home-fornecedor">Pedidos concluídos</p>
           <h5>10</h5>
 
-          <Link className="primary-btn">Gerenciar pedidos</Link>
+          <Link to={"/fornecedor/gerenciar/pedidos"} className="primary-btn">Gerenciar pedidos</Link>
         </div>
 
       </div>

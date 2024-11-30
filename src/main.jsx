@@ -30,6 +30,9 @@ import CadastroFornecedor2 from "./pages/UserFornecedor/Cadastro/SegundaEtapa/Ca
 import CadastroFornecedor3 from './pages/UserFornecedor/Cadastro/TerceiraEtapa/CadastroFornecedor3.jsx'
 import LoginFornecedor from './pages/UserFornecedor/Login/LoginFornecedor.jsx'
 import TableGerenciarProdutos from './components/TabelaGerenciarProdutos/TableGerenciarProdutos.jsx'
+import CadastrarProdutos from './pages/UserFornecedor/CadastrarProdutos/CadastrarProdutos.jsx'
+import GerenciarPedidos from './pages/UserFornecedor/GerenciarPedidos/GerenciarPedidos.jsx'
+import TelaCompra from './pages/UserCliente/TelaCompra/TelaCompra.jsx'
 
 //-----------------
 
@@ -55,6 +58,10 @@ const router = createBrowserRouter([
         path: "/cliente/home",
         element: <HomeCliente/>
       },
+        {
+          path: "/cliente/compra",
+          element: <TelaCompra/>
+        },
       {
         path: "/cliente/cadastro",
         element: <CadastroCliente/>
@@ -72,6 +79,11 @@ const router = createBrowserRouter([
       {
         path: "/fornecedor/home",
         element: <HomeFornecedor/>
+      },
+
+      {
+        path: "/fornecedor/cadastrar/produtos",
+        element: <CadastrarProdutos/>
       },
 
       {
@@ -93,6 +105,10 @@ const router = createBrowserRouter([
       {
         path: "/fornecedor/gerenciar/produtos",
         element: <TableGerenciarProdutos/>
+      },
+      {
+        path: "/fornecedor/gerenciar/pedidos",
+        element: <GerenciarPedidos/>
       },
 
     ]

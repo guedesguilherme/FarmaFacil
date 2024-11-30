@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import "./Telacompra.css";
+import "./TelaCompra.css";
 
 import React from 'react'
 

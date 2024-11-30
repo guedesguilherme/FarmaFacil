@@ -49,6 +49,11 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # Instalar o SonarScanner
+      - name: Install SonarScanner
+        run: |
+          npm install -g sonar-scanner
+
       # Executar o SonarScanner
       - name: Run SonarScanner
         run: sonar-scanner

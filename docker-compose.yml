@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  vite-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173" # Porta para acessar a aplicação
+    volumes:
+      - .:/app # Sincroniza o diretório local com o contêiner
+      - /app/node_modules
+    stdin_open: true
+    tty: true

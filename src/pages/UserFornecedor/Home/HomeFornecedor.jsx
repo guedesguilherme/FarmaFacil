@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import React from 'react'
 
@@ -7,7 +8,9 @@ import "./HomeFornecedor.css"
 const HomeFornecedor = () => {
   return (
     <div className="container-home-fornecedor">
-
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <div className="header">
         <h2>Olá</h2>
         <Link to={"/fornecedor"}>

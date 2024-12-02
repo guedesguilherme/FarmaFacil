@@ -1,4 +1,5 @@
 import TableGerenciarPedidos from '../../../components/TabelaGerenciarPedidos/TableGerenciarPedidos'
+import { Helmet } from "react-helmet";
 
 import React from 'react'
 
@@ -7,7 +8,9 @@ import './GerenciarPedidos.css'
 const GerenciarPedidos = () => {
   return (
     <div className='container-pedidos-fornecedor'>
-
+      <Helmet>
+        <title>Gerencie seus pedidos</title>
+      </Helmet>
       <TableGerenciarPedidos />
 
       <div className='options-footer'>

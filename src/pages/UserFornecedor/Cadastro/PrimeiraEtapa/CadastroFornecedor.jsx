@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import React from 'react'
 
@@ -7,7 +8,9 @@ import "./CadastroFornecedor.css"
 const CadastroFornecedor = () => {
   return (
     <div className="container">
-
+      <Helmet>
+        <title>Cadastre-se no App</title>
+      </Helmet>
       <div className="topo-page">
 
         <Link to={"/"}>

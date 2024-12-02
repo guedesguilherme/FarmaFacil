@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import React from 'react'
 
@@ -8,7 +9,9 @@ const CadastroFornecedor2 = () => {
   return (
 
     <div className="container">
-
+      <Helmet>
+        <title>Quase lá...</title>
+      </Helmet>
       <div className="topo-page">
 
         <Link to={"/"}>

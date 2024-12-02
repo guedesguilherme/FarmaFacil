@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import "./LoginCliente.css";
+import { Helmet } from "react-helmet";
 
 const LoginCliente = () => {
   const [email, setEmail] = useState("");
@@ -36,6 +37,9 @@ const LoginCliente = () => {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>Entre no App</title>
+      </Helmet>
       <div className="topo-page">
         <Link to={"/"}>
           <img
@@ -84,7 +88,7 @@ const LoginCliente = () => {
 
           <div id="entrar-com-email">
             <Link to={"/cliente/entrar/email"} className="secondary-btn">
-              Entrar com SMS
+              Entrar com e-mail
             </Link>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from "react-helmet";
 
 import { Link } from "react-router-dom";
 
@@ -6,7 +7,9 @@ import "./CadastrarProdutos.css"
 const CadastrarProdutos = () => {
   return (
     <div className='container-produtos-fornecedor'>
-
+      <Helmet>
+        <title>Cadastre novos produtos</title>
+      </Helmet>
       <div className="header">
 
         <h2>Preencha os Campos</h2>

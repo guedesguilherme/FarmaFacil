@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./HomeCliente.css";
+import { Helmet } from "react-helmet";
 
 const HomeCliente = () => {
   const [produtos, setProdutos] = useState([]);
@@ -33,6 +34,9 @@ const HomeCliente = () => {
 
   return (
     <div className="container-home-cliente">
+      <Helmet>
+        <title>Seja bem-vindo(a)</title>
+      </Helmet>
       <div className='header'>
         <h2>Olá, nome</h2>
         <Link to={"/"}>

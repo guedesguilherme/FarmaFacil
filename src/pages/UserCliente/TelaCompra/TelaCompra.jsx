@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import "./TelaCompra.css";
 
@@ -7,7 +8,9 @@ import React from 'react'
 const TelaCompra = () => {
     return (
         <div className='container-compra-fornecedor'>
-
+            <Helmet>
+                <title>Quase lá...</title>
+            </Helmet>
             <div className="heade-compra">
                 <Link to={"/cliente/home"}>
                     <img src="../../../../public/img/icons/back.svg" alt="Voltar" srcset="" className='btn-voltar' />

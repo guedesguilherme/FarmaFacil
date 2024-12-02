@@ -2,7 +2,7 @@
   "name": "farmafacil",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"No tests configured\" && exit 0",
     "dev": "vite",
@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "sonar": "sonarqube-scanner"
+    "sonar": "node sonar-scanner.js"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.6.3",
@@ -20,6 +20,7 @@
     "axios": "^1.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {

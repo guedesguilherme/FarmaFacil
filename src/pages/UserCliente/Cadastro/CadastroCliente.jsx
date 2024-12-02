@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import "./CadastroCliente.css";
+import { Helmet } from "react-helmet";
 
 const CadastroCliente = () => {
   const [nome, setNome] = useState("");
@@ -40,6 +41,9 @@ const CadastroCliente = () => {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>Cadastre-se no App</title>
+      </Helmet>
       <div className="topo-page">
         <Link to={"/"}>
           <img

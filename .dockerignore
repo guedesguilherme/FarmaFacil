@@ -1,15 +1,23 @@
-# Ignorar dependências instaladas
-node_modules
-npm-debug.log
+# Dependências do Node.js
+node_modules/
 
-# Ignorar arquivos de configuração locais e sensíveis
-.env.local
+# Arquivos de configuração de IDEs
 .vscode/
 .idea/
 
-# Ignorar diretórios de build
-dist
+# Arquivos de log
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
-# Ignorar arquivos de sistema
+# Arquivos de ambiente locais
+.env
+.env.local
+.env.*.local
+
+# Diretórios de build (geralmente já são gerados durante o build)
+dist/
+
+# Arquivos do sistema operacional
 .DS_Store
-*.log
+Thumbs.db

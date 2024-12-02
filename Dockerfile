@@ -10,11 +10,12 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 # Copie apenas os arquivos essenciais para instalar dependências
 COPY package*.json ./
 
-# Instale as dependências (essa etapa pode ser feita como root)
+# Instale as dependências
 RUN npm install --ignore-scripts
 
-# Copie o restante dos arquivos necessários
-COPY . .
+# Copie apenas os arquivos que são necessários para o build
+COPY src/ ./src/
+COPY public/ ./public/
 
 # Altere o proprietário dos arquivos para o usuário não-root
 RUN chown -R appuser:appgroup /app
@@ -22,10 +23,10 @@ RUN chown -R appuser:appgroup /app
 # Altere para o usuário não-root
 USER appuser
 
-# Construa o projeto (caso seja produção)
+# Construa o projeto
 RUN npm run build
 
-# Exponha a porta do servidor de desenvolvimento
+# Exponha a porta
 EXPOSE 5173
 
 # Comando para rodar o servidor de desenvolvimento

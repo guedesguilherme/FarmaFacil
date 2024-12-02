@@ -1,20 +1,23 @@
-# Usar uma imagem base do Node.js
-FROM node:18
+# Use uma imagem base leve do Node.js
+FROM node:18-alpine
 
-# Define o diretório de trabalho dentro do container
+# Configure o diretório de trabalho no contêiner
 WORKDIR /app
 
-# Copia os arquivos de dependências para o container
+# Copie apenas os arquivos essenciais para instalar dependências
 COPY package*.json ./
 
-# Instala as dependências
-RUN npm install
+# Instale as dependências
+RUN npm install --ignore-scripts
 
-# Copia o restante dos arquivos do projeto
+# Copie o restante dos arquivos necessários
 COPY . .
 
-# Expõe a porta que o Vite usa (pode alterar se necessário)
+# Construa o projeto (caso seja produção)
+RUN npm run build
+
+# Exponha a porta do servidor de desenvolvimento
 EXPOSE 5173
 
-# Comando para iniciar o servidor Vite
+# Comando para rodar o servidor de desenvolvimento
 CMD ["npm", "run", "dev", "--", "--host"]

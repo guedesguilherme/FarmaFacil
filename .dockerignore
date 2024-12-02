@@ -1,5 +1,15 @@
+# Ignorar dependências instaladas
 node_modules
+npm-debug.log
+
+# Ignorar arquivos de configuração locais e sensíveis
+.env.local
+.vscode/
+.idea/
+
+# Ignorar diretórios de build
 dist
-.dockerignore
-Dockerfile
-docker-compose.yml
+
+# Ignorar arquivos de sistema
+.DS_Store
+*.log

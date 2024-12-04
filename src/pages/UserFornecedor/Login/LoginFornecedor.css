@@ -1,0 +1,55 @@
+input {
+    outline: none;
+  }
+  
+  button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2161b5;
+  }
+  
+  .toLogin {
+    color: #2f88ff;    
+    transition: all 0.3s ease;
+  }
+  
+  .toLogin:hover {
+    scale: 1.05;
+    color: #2161b5 ;
+  }
+  
+  .manter-conectado {
+    display: flex; /* Alinha o checkbox e o texto do rótulo em uma única linha horizontal. */
+    align-items: center; /* Centraliza verticalmente o checkbox e o rótulo. */
+    gap: 8px; /* Adiciona um espaçamento de 8px entre o checkbox e o rótulo. */
+  }
+  
+  .checkbox-manter-conectado {
+    appearance: none; /* Remove o estilo padrão do checkbox para permitir personalização. */
+    -webkit-appearance: none; /* Remove o estilo padrão em navegadores baseados no WebKit (como Safari). */
+    width: 16px; /* Define a largura do checkbox. */
+    height: 16px; /* Define a altura do checkbox. */
+    margin: 0; /* Remove as margens padrão do checkbox. */
+    border: 2px solid #007bff; /* Adiciona uma borda azul com espessura de 2px. */
+    border-radius: 4px; /* Arredonda levemente os cantos do checkbox. */
+    background-color: #fff; /* Define o fundo branco para o checkbox. */
+    cursor: pointer; /* Muda o cursor para indicar que o elemento é clicável. */
+    display: flex; /* Define o checkbox como um contêiner flexível para centralizar o conteúdo interno. */
+    align-items: center; /* Centraliza verticalmente o conteúdo interno do checkbox (caso exista). */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo interno do checkbox (caso exista). */
+  }
+  
+  .checkbox-manter-conectado:checked {
+    background-color: #007bff; /* Muda o fundo para azul quando o checkbox está marcado. */
+    border-color: #0056b3; /* Altera a cor da borda para um azul mais escuro quando marcado. */
+  }
+  
+  .checkbox-manter-conectado:checked::after {
+    content: "✓"; /* Adiciona uma marca de verificação dentro do checkbox quando marcado. */
+    /* font-size: 16px; Define o tamanho da marca de verificação. */
+    color: #fff; /* Define a cor da marca de verificação como branca. */
+  }
+  

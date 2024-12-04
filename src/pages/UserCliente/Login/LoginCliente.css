@@ -12,7 +12,48 @@
     flex-direction: column;
 }
 
+.toCadastro {
+    color: #2f88ff;    
+    transition: all 0.3s ease;
+}
+
+.toCadastro:hover {    
+    scale: 1.05;
+    color: #2161b5 ;
+}
 
 #entrar-com-email{
-    padding: 40px!important;
+    /* padding: 40px!important; */
+    margin-top: 20px;    
+}
+
+#entrar-com-email .tertiary-text-btn {    
+    transition: all 0.5s ease;
+}
+
+#entrar-com-email .tertiary-text-btn:hover {
+    font-size: 17px;
+    color: #2161b5 ;
+}
+
+.entrar-email {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.entrar-email::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #2f88ff;
+    transition: width 0.3s ease-in-out;
+}
+
+.entrar-email:hover::after {
+    width: 100%;
 }

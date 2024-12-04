@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet";
 
 import React from 'react'
 
+import "./LoginFornecedor.css"
+
 const LoginFornecedor = () => {
   return (
     <div className="container">
@@ -12,16 +14,15 @@ const LoginFornecedor = () => {
       </Helmet>
       <div className="topo-page">
 
-        <Link to={"/"}>
+        <Link to={"/fornecedor"}>
           <img src="../../../../public/img/icons/back.svg" alt="Voltar" srcset="" className='btn-voltar'/>
         </Link>
 
         <h2>Entrar</h2>
 
-        <Link to={"/cliente/cadastro"}>
-          <h3 className="primary-text-btn">Cadastrar</h3>  
+        <Link to={"/fornecedor/cadastro"}>
+          <h3 className="toCadastro">Cadastrar</h3>  
         </Link>
-
       </div>
 
 
@@ -44,7 +45,7 @@ const LoginFornecedor = () => {
             </div>
 
 
-            <Link to={"/fornecedor/home"} className="primary-btn">
+            <Link to={"/fornecedor/home"} className="primary-btn login">
               Entrar
             </Link>
 

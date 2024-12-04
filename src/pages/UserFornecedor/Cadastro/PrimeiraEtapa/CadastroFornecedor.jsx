@@ -13,14 +13,14 @@ const CadastroFornecedor = () => {
       </Helmet>
       <div className="topo-page">
 
-        <Link to={"/"}>
+        <Link to={"/fornecedor/"}>
           <img src="../../../../public/img/icons/back.svg" alt="" srcset="" className='btn-voltar'/>
         </Link>
 
         <h2>Cadastrar</h2>
 
         <Link to={"/fornecedor/entrar"}>
-          <h3 className="primary-text-btn">Entrar</h3>  
+          <h3 className="primary-text-btn toLogin">Entrar</h3>  
         </Link>
 
       </div>
@@ -55,7 +55,7 @@ const CadastroFornecedor = () => {
             </div>
 
 
-            <Link to={"/fornecedor/cadastro/2"} className="primary-btn">
+            <Link to={"/fornecedor/cadastro/2"} className="primary-btn cadastro">
                 Próxima etapa
             </Link>
 

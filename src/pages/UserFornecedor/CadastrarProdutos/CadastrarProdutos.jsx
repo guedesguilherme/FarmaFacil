@@ -13,7 +13,7 @@ const CadastrarProdutos = () => {
       <div className="header">
 
         <h2>Preencha os Campos</h2>
-        <Link to={"/fornecedor/home"}>
+        <Link to={"/fornecedor/home"} className='svgIcon'>
           <img src="../../../../public/img/icons/back.svg" alt="Voltar" srcset="" className='btn-voltar'/>
         </Link>
 

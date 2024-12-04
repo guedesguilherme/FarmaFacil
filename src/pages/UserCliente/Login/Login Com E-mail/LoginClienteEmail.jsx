@@ -7,19 +7,19 @@ const LoginClienteEmail = () => {
     return (
         <div className="container">
           <Helmet>
-        <   title>Entre no App</title>
+            <title>Entre no App</title>
           </Helmet>
     
           <div className="topo-page">
     
-            <Link to={"/"}>
+            <Link to={"/"} className="svgIcon">
               <img src="../../../../public/img/icons/back.svg" alt="Voltar" srcset="" className='btn-voltar'/>
             </Link>
     
             <h2>Entrar</h2>
     
             <Link to={"/cliente/cadastro"}>
-              <h3 className="primary-text-btn">Cadastrar</h3>  
+              <h3 className="primary-text-btn toCadastro">Cadastrar</h3>  
             </Link>
     
           </div>
@@ -38,12 +38,12 @@ const LoginClienteEmail = () => {
                 </div>
     
     
-                <Link to={"/cliente/home"} className="primary-btn">
+                <Link to={"/cliente/home"} className="primary-btn login">
                   Enviar e-mail
                 </Link>
     
                 <div id="entrar-com-email">
-                  <Link to={"/cliente/entrar"} className="secondary-btn">
+                  <Link to={"/cliente/entrar"} className="tertiary-text-btn entrar-email">
                     Entrar com senha
                   </Link>
                 </div>

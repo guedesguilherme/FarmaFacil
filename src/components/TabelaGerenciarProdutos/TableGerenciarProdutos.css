@@ -2,9 +2,9 @@
     border: 3px solid #2F88FF;
     text-align: left;
     border-radius: 10px;
-    padding-top: 1rem;
-    padding-bottom: 0.1rem;
+    padding: 1rem;
     border-spacing: 0;
+    width: 100%;
 }
 
 .headline-estoque-fornecedor{

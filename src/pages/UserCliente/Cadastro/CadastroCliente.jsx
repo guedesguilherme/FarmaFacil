@@ -49,14 +49,14 @@ const CadastroCliente = () => {
           <img
             src="../../../../img/icons/back.svg"
             alt="Voltar"
-            className="btn-voltar"
+            className="btn-voltar svgIcon"
           />
         </Link>
 
         <h2>Cadastrar</h2>
 
         <Link to={"/cliente/entrar"}>
-          <h3 className="primary-text-btn">Entrar</h3>
+          <h3 className="toLogin">Entrar</h3>
         </Link>
       </div>
 
@@ -113,6 +113,7 @@ const CadastroCliente = () => {
           <div className="manter-conectado">
             <input
               type="checkbox"
+              id="manter-conectado-checkbox"
               name="manter-conectado"
               className="checkbox-manter-conectado"
             />

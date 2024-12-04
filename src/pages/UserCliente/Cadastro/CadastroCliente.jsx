@@ -47,7 +47,7 @@ const CadastroCliente = () => {
       <div className="topo-page">
         <Link to={"/"}>
           <img
-            src="../../../../public/img/icons/back.svg"
+            src="../../../../img/icons/back.svg"
             alt="Voltar"
             className="btn-voltar"
           />

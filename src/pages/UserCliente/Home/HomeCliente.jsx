@@ -40,7 +40,7 @@ const HomeCliente = () => {
       <div className='header'>
         <h2>Olá, nome</h2>
         <Link to={"/"}>
-          <img src="../../../../public/img/icons/logout.svg" alt="" />
+          <img src="../../../../public/img/icons/logout.svg" className="svgIcon" alt="" />
         </Link>
       </div>
 

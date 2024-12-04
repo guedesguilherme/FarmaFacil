@@ -1,0 +1,17 @@
+.login {
+    transition: all 0.3s ease;
+}
+
+.login:hover {
+    background-color: #2161b5;
+}
+
+.cadastro {
+    transition: all 0.3s ease;
+}	
+
+.cadastro:hover {
+    background-color: #2f88ff;
+    color: #fff;
+    border: transparent;
+}

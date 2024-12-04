@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from "react-helmet";
 
 import React from 'react'
+import './CadastroFornecedor3.css'
 
 const CadastroFornecedor3 = () => {
     return (
@@ -13,13 +14,13 @@ const CadastroFornecedor3 = () => {
           <div className="topo-page">
     
             <Link to={"/"}>
-              <img src="../../../../public/img/icons/back.svg" alt="" srcset="" className='btn-voltar'/>
+              <img src="../../../../public/img/icons/back.svg" alt="" srcset="" className='btn-voltar svgIcon'/>
             </Link>
     
             <h2>Cadastrar</h2>
     
             <Link to={"/fornecedor/entrar"}>
-              <h3 className="primary-text-btn">Entrar</h3>  
+              <h3 className="primary-text-btn toLogin">Entrar</h3>  
             </Link>
     
           </div>
@@ -44,7 +45,7 @@ const CadastroFornecedor3 = () => {
                     <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
                 </div>
     
-                <Link to={"/cliente/home"} className="primary-btn">
+                <Link to={"/cliente/home"} className="primary-btn login">
                   Cadastrar
                 </Link>
     

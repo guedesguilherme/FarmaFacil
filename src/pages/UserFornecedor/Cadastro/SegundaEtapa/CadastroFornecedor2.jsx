@@ -15,13 +15,13 @@ const CadastroFornecedor2 = () => {
       <div className="topo-page">
 
         <Link to={"/"}>
-          <img src="../../../../public/img/icons/back.svg" alt="" srcset="" className='btn-voltar'/>
+          <img src="../../../../public/img/icons/back.svg" alt="" srcset="" className='btn-voltar svgIcon'/>
         </Link>
 
         <h2>Cadastrar</h2>
 
         <Link to={"/fornecedor/entrar"}>
-          <h3 className="primary-text-btn">Entrar</h3>  
+          <h3 className="primary-text-btn toCadastro">Entrar</h3>  
         </Link>
 
       </div>
@@ -79,14 +79,12 @@ const CadastroFornecedor2 = () => {
                 <option value="TO">Tocantins (TO)</option>
             </select>
 
-
             <div class="manter-conectado">
                 <input type="checkbox" name="manter-conectado" className="checkbox-manter-conectado"/>
                 <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
             </div>
 
-
-            <Link to={"/fornecedor/home"} className="primary-btn">
+            <Link to={"/fornecedor/home"} className="primary-btn login">
                 Próxima etapa
             </Link>
 
@@ -95,7 +93,7 @@ const CadastroFornecedor2 = () => {
       </form>
 
 
-      <span id="esquece-senha">Esqueceu sua senha?</span>
+      {/* <span id="esquece-senha">Esqueceu sua senha?</span> */}
 
     </div>
   )

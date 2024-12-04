@@ -37,3 +37,7 @@ h5{
 .p-home-fornecedor{
     margin-top: 1rem;
 }
+
+.card .primary-btn {
+    margin-top: 15px;
+}

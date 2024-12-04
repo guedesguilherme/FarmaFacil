@@ -35,3 +35,11 @@
     gap: 10px;
     width: 100%;
 }
+
+.svgIcon {
+    transition: all 0.3s ease;
+}
+
+.svgIcon:hover {
+    scale: 1.2;
+}

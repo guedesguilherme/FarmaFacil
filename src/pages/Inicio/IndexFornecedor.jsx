@@ -18,18 +18,18 @@ const Index = () => {
 
         <h2 id="h2">Você possui cadastro em nosso App?</h2>
 
-        <Link className="primary-btn" to={"/fornecedor/entrar"}>
+        <Link className="primary-btn login" to={"/fornecedor/entrar"}>
                 Sim, sou cadastrado(a)
         </Link>
 
         <p id="ou-index-inicio">ou...</p>
         
-        <Link className="secondary-btn" to={"/fornecedor/cadastro"}> 
+        <Link className="secondary-btn cadastro" to={"/fornecedor/cadastro"}> 
                 Não, quero me cadastrar
         </Link>
 
         <div id="container-footer-inicio">
-            <Link className="primary-text-btn" to={"/"}>
+            <Link className="primary-text-btn fornecedor" to={"/"}>
                 Sou cliente.
             </Link>
           </div>

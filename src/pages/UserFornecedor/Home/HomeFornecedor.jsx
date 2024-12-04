@@ -13,12 +13,12 @@ const HomeFornecedor = () => {
       </Helmet>
       <div className="header">
         <h2>Olá</h2>
-        <Link to={"/fornecedor"}>
+        <Link to={"/fornecedor"} className="svgIcon">
           <img src="../../../../public/img/icons/logout.svg" alt="" />
         </Link>
       </div>
 
-      <Link to={"/fornecedor/cadastrar/produtos"} className="secondary-btn">Cadastrar novo produto</Link>
+      <Link to={"/fornecedor/cadastrar/produtos"} className="secondary-btn cadastro">Cadastrar novo produto</Link>
 
       <div className="card-container">
 
@@ -31,7 +31,7 @@ const HomeFornecedor = () => {
           <p className="p-home-fornecedor">Produto em menor qtd</p>
           <h5>Dipirona</h5>
 
-          <Link className="primary-btn" to={"/fornecedor/gerenciar/produtos"}>Gerenciar estoque</Link>
+          <Link className="primary-btn login" to={"/fornecedor/gerenciar/produtos"}>Gerenciar estoque</Link>
         </div>
 
         <div className="card">
@@ -43,7 +43,7 @@ const HomeFornecedor = () => {
           <p className="p-home-fornecedor">Pedidos concluídos</p>
           <h5>10</h5>
 
-          <Link to={"/fornecedor/gerenciar/pedidos"} className="primary-btn">Gerenciar pedidos</Link>
+          <Link to={"/fornecedor/gerenciar/pedidos"} className="primary-btn login">Gerenciar pedidos</Link>
         </div>
 
       </div>

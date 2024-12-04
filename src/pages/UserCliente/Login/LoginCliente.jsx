@@ -41,16 +41,17 @@ const LoginCliente = () => {
         <title>Entre no App</title>
       </Helmet>
       <div className="topo-page">
-        <Link to={"/"}>
+        <Link to={"/"} className="svgIcon">
           <img
             src="../../../../public/img/icons/back.svg"
             alt="Voltar"
             className="btn-voltar"
-          />
+          />          
+
         </Link>
         <h2>Entrar</h2>
         <Link to={"/cliente/cadastro"}>
-          <h3 className="primary-text-btn">Cadastrar</h3>
+          <h3 className="toCadastro">Cadastrar</h3>
         </Link>
       </div>
 
@@ -87,7 +88,7 @@ const LoginCliente = () => {
           </button>
 
           <div id="entrar-com-email">
-            <Link to={"/cliente/entrar/email"} className="secondary-btn">
+            <Link to={"/cliente/entrar/email"} className="tertiary-text-btn entrar-email">
               Entrar com e-mail
             </Link>
           </div>

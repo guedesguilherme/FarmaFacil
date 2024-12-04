@@ -30,7 +30,7 @@ const TableGerenciarProdutos = () => {
 
         <div className="header">
         <Link to={"/fornecedor/home"}>
-          <img src="../../../../public/img/icons/back.svg" alt="" />
+          <img src="../../../../public/img/icons/back.svg" className='svgIcon' alt="" />
         </Link>
         </div>
             <h2 className='headline-estoque-fornecedor'>Gerencie seu estoque</h2>

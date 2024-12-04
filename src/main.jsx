@@ -29,8 +29,8 @@ import CadastroFornecedor from "./pages/UserFornecedor/Cadastro/PrimeiraEtapa/Ca
 import CadastroFornecedor2 from "./pages/UserFornecedor/Cadastro/SegundaEtapa/CadastroFornecedor2.jsx"
 import CadastroFornecedor3 from './pages/UserFornecedor/Cadastro/TerceiraEtapa/CadastroFornecedor3.jsx'
 import LoginFornecedor from './pages/UserFornecedor/Login/LoginFornecedor.jsx'
-import TableGerenciarProdutos from './components/TabelaGerenciarProdutos/TableGerenciarProdutos.jsx'
 import CadastrarProdutos from './pages/UserFornecedor/CadastrarProdutos/CadastrarProdutos.jsx'
+import TableGerenciarProdutos from './components/TabelaGerenciarProdutos/TableGerenciarProdutos.jsx'
 import GerenciarPedidos from './pages/UserFornecedor/GerenciarPedidos/GerenciarPedidos.jsx'
 import TelaCompra from './pages/UserCliente/TelaCompra/TelaCompra.jsx'
 

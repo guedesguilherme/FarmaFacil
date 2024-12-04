@@ -29,8 +29,8 @@ const TableGerenciarPedidos = () => {
 
     return (
         <div className='container-home-fornecedor'>
-            <div className="header">
-                <Link to={"/fornecedor/home"}>
+            <div className="header" >
+                <Link to={"/fornecedor/home"} className='svgIcon'>
                     <img src="../../../../public/img/icons/back.svg" alt="Voltar" />
                 </Link>
             </div>

@@ -15,7 +15,22 @@
 
 .preco-e-btn {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
 }
 
+.preco-e-btn .primary-btn {
+    transition: all 0.3s ease;
+}
+
+.preco-e-btn .primary-btn:hover {
+    background-color: #2161b5;
+}
+
+.svgIcon {
+    transition: all 0.3s ease;
+}
+
+.svgIcon:hover {
+    scale: 1.2;
+}

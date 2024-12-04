@@ -13,7 +13,7 @@ const TelaCompra = () => {
             </Helmet>
             <div className="heade-compra">
                 <Link to={"/cliente/home"}>
-                    <img src="../../../../public/img/icons/back.svg" alt="Voltar" srcset="" className='btn-voltar' />
+                    <img src="../../../../public/img/icons/back.svg" alt="Voltar" srcset="" className='btn-voltar svgIcon' />
                 </Link>
                 <h2>Finalize a Compra</h2>
             </div>

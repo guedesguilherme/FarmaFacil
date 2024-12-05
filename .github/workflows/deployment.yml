@@ -56,5 +56,5 @@ jobs:
 
       # Deploy do projeto (opcional, ajustar conforme necessário
       - name: Deploy to Vercel
-        run: npx vercel --prod --yes token Pz0uOIGQ6KklY2NgTVSAJvoC
+        run: npx vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
         

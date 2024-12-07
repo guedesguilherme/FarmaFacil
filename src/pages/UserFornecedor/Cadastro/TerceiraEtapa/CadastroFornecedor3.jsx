@@ -1,59 +1,79 @@
-import { Link } from 'react-router-dom'
-import { Helmet } from "react-helmet";
+// import { useNavigate, useLocation } from 'react-router-dom';
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// import './CadastroFornecedor3.css';
 
-import React from 'react'
-import './CadastroFornecedor3.css'
+// const CadastroFornecedor3 = () => {
 
-const CadastroFornecedor3 = () => {
-    return (
-        <div className="container">
-    
-          <Helmet>
-            <title>Última etapa!</title>
-          </Helmet>
-          <div className="topo-page">
-    
-            <Link to={"/"}>
-              <img src="../../../../public/img/icons/back.svg" alt="" srcset="" className='btn-voltar svgIcon'/>
-            </Link>
-    
-            <h2>Cadastrar</h2>
-    
-            <Link to={"/fornecedor/entrar"}>
-              <h3 className="primary-text-btn toLogin">Entrar</h3>  
-            </Link>
-    
-          </div>
+//   const location = useLocation();
 
-          <h3 id="h3-cadastro-fornecedor">Quase lá...</h3>
-          <p>
-            Defina uma senha difícil e não compartilhe ela com ninguém!
-          </p>
-    
-          <form action="">
-    
-            <div className="form-control">
-    
-                <label for="senha" class="labels">Escolha uma senha</label>
-                <input type="text" name="senha" id="" placeholder="Defina uma senha aqui" class="inputs"/>
-    
-                <label for="senha" class="labels">Repita a senha</label>
-                <input type="text" name="senha" id="" placeholder="Repita a senha definida aqui" class="inputs"/>
-    
-                <div class="manter-conectado">
-                    <input type="checkbox" name="manter-conectado" className="checkbox-manter-conectado"/>
-                    <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
-                </div>
-    
-                <Link to={"/cliente/home"} className="primary-btn login">
-                  Cadastrar
-                </Link>
-    
-            </div>
-    
-          </form>
-        </div>
-      )
-}
+//   const dadosFornecedor = location.state?.dadosFornecedor || {};
 
-export default CadastroFornecedor3
+//   const [senha, setSenha] = useState("");
+//   const [confirmasenha, setconfirmasenha] = useState("");
+//   const navigate = useNavigate();
+
+//   const handleCadastroFinal = async (e) => {
+//     e.preventDefault();
+
+//     // Verificando se as senhas coincidem
+//     if (senha !== confirmasenha) {
+//       alert("As senhas não coincidem!");
+//       return;
+//     }
+
+//     // Montando o payload com todos os dados
+//     const payload = {
+//       ...dadosFornecedor, // Aqui você inclui todos os dados das etapas anteriores
+//       senha,
+//       confirmasenha,
+//     };
+
+//     // Imprimindo os dados no console para ver o que está sendo enviado
+//     console.log("Dados que estão sendo enviados para a API:", payload);
+
+//     try {
+//       // Enviar todos os dados de uma vez para a API
+//       const response = await axios.post("https://api-cadastro-farmacias.onrender.com/farma/auth/register", payload);
+
+//       if (response.status === 200) {
+//         // Navegar para a página inicial após o cadastro
+//         navigate("/fornecedor/home");
+//       }
+//     } catch (error) {
+//       console.error("Erro ao realizar o cadastro final: ", error);
+//     }
+//   };
+
+//   return (
+//     <div className="container">
+//       <h2>Última etapa do cadastro</h2>
+
+//       <form onSubmit={handleCadastroFinal}>
+//         <label htmlFor="senha" className="labels">Escolha uma senha</label>
+//         <input
+//           type="password"
+//           name="senha"
+//           placeholder="Defina uma senha aqui"
+//           className="inputs"
+//           value={senha}
+//           onChange={(e) => setSenha(e.target.value)}
+//         />
+
+//         <label htmlFor="confirmasenha" className="labels">Repita a senha</label>
+//         <input
+//           type="password"
+//           name="confirmasenha"
+//           placeholder="Repita a senha definida aqui"
+//           className="inputs"
+//           value={confirmasenha}
+//           onChange={(e) => setconfirmasenha(e.target.value)}
+//         />
+
+//         <button type="submit" className="primary-btn login">Cadastrar</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default CadastroFornecedor3;

@@ -8,10 +8,13 @@ const TableGerenciarPedidos = () => {
     const [pedidos, setPedidos] = useState([]);
 
     useEffect(() => {
+
+        const farma_id = localStorage.getItem('id')
+
         const fetchPedidos = async () => {
             try {
                 // Requisição para obter os pedidos
-                const response = await axios.get('http://localhost:3000/pedidos');  // Certifique-se de usar a URL correta da sua API
+                const response = await axios.get(`https://api-cadastro-farmacias.onrender.com/pedidos/farmacia/${farma_id}`);  // Certifique-se de usar a URL correta da sua API
                 console.log('Resposta da API:', response.data); // Para debug
 
                 if (Array.isArray(response.data)) {

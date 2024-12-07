@@ -1,11 +1,50 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
-import React from 'react'
-
+import React, { useState } from "react";
+import axios from "axios";
 import "./LoginFornecedor.css"
 
 const LoginFornecedor = () => {
+
+  const [cnpj, setCnpj] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Fazendo a requisição para a API
+      const response = await axios.post("https://api-cadastro-farmacias.onrender.com/farma/auth/login", {
+        cnpj,
+        email,
+        senha,
+      });
+
+      // Salvando o token no localStorage
+      const { token } = response.data;
+      localStorage.setItem("authToken", token);
+
+      const {farma_id} = response.data;
+      localStorage.setItem("id", farma_id)
+
+      // Navegando para a página inicial do cliente
+      navigate("/fornecedor/home");
+    } catch (error) {
+      if (error.response) {
+        setError(error.response.data.msg); // Mostra mensagem de erro do back-end
+      } else {
+        setError("Erro ao conectar ao servidor.");
+      }
+    }
+  };
+
+
+
+
+
   return (
     <div className="container">
 
@@ -26,28 +65,50 @@ const LoginFornecedor = () => {
       </div>
 
 
-      <form action="">
+      <form onSubmit={handleLogin}>
 
         <div className="form-control">
 
             <label for="email" class="labels">Insira seu e-mail comercial</label>
-            <input type="email" name="telefone" id="" placeholder="Insira seu e-mail aqui" class="inputs"/>
+            <input 
+            type="email" 
+            name="email" 
+            id="" placeholder="Insira seu e-mail aqui" 
+            class="inputs"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            />
             
             <label for="cnpj" class="labels">Insira seu CNPJ</label>
-            <input type="text" name="telefone" id="" placeholder="Insira seu CNPJ aqui" class="inputs"/>
+            <input type="text" 
+            name="cnpj" 
+            id="" 
+            placeholder="Insira seu CNPJ aqui"
+            class="inputs"
+            value={cnpj}
+            onChange={(e) => setCnpj(e.target.value)}
+             />
 
             <label for="senha" class="labels">Insira sua senha.</label>
-            <input type="password" name="senha" id="" placeholder="Insira sua senha aqui" class="inputs"/>
+            <input 
+            type="password" 
+            name="senha" 
+            id="" 
+            placeholder="Insira sua senha aqui" 
+            class="inputs"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}/>
 
             <div class="manter-conectado">
                 <input type="checkbox" name="manter-conectado" className="checkbox-manter-conectado"/>
                 <label for="manter-conectado" id="manter-conectado-label">Mantenha-me conectado.</label>
             </div>
 
+          {error && <p className="error-msg">{error}</p>}
 
-            <Link to={"/fornecedor/home"} className="primary-btn login">
-              Entrar
-            </Link>
+          <button type="submit"  className="primary-btn login">
+            Entrar
+          </button>
 
         </div>
 

@@ -12,7 +12,7 @@ const HomeCliente = () => {
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/produtos"); // Atualize com a URL da sua API
+        const response = await axios.get("https://api-cadastro-farmacias.onrender.com/produtos"); // Atualize com a URL da sua API
         setProdutos(response.data);
       } catch (error) {
         console.error("Erro ao buscar produtos:", error);

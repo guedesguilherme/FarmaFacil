@@ -15,7 +15,7 @@ const LoginCliente = () => {
 
     try {
       // Fazendo a requisição para a API
-      const response = await axios.post("http://localhost:3000/usuarios/auth/login", {
+      const response = await axios.post("https://api-cadastro-farmacias.onrender.com/usuarios/auth/login", {
         email,
         senha,
       });

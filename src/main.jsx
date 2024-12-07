@@ -26,8 +26,8 @@ import LoginClienteEmail from './pages/UserCliente/Login/Login Com E-mail/LoginC
 //Import das pages do fornecedor
 import HomeFornecedor from "./pages/UserFornecedor/Home/HomeFornecedor.jsx"
 import CadastroFornecedor from "./pages/UserFornecedor/Cadastro/PrimeiraEtapa/CadastroFornecedor.jsx"
-import CadastroFornecedor2 from "./pages/UserFornecedor/Cadastro/SegundaEtapa/CadastroFornecedor2.jsx"
-import CadastroFornecedor3 from './pages/UserFornecedor/Cadastro/TerceiraEtapa/CadastroFornecedor3.jsx'
+// import CadastroFornecedor2 from "./pages/UserFornecedor/Cadastro/SegundaEtapa/CadastroFornecedor2.jsx"
+// import CadastroFornecedor3 from './pages/UserFornecedor/Cadastro/TerceiraEtapa/CadastroFornecedor3.jsx'
 import LoginFornecedor from './pages/UserFornecedor/Login/LoginFornecedor.jsx'
 import CadastrarProdutos from './pages/UserFornecedor/CadastrarProdutos/CadastrarProdutos.jsx'
 import TableGerenciarProdutos from './components/TabelaGerenciarProdutos/TableGerenciarProdutos.jsx'
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         element: <HomeCliente/>
       },
         {
-          path: "/cliente/compra",
+          path: "/cliente/compra/:id",
           element: <TelaCompra/>
         },
       {
@@ -90,14 +90,14 @@ const router = createBrowserRouter([
         path: "/fornecedor/cadastro",
         element: <CadastroFornecedor />
       },
-        {
-          path: "/fornecedor/cadastro/2",
-          element: <CadastroFornecedor2 />
-        },
-          {
-            path: "/fornecedor/cadastro/3",
-            element: <CadastroFornecedor3 />
-          },
+        // {
+        //   path: "/fornecedor/cadastro/2",
+        //   element: <CadastroFornecedor2 />
+        // },
+        //   {
+        //     path: "/fornecedor/cadastro/3",
+        //     element: <CadastroFornecedor3 />
+        //   },
       {
         path: "/fornecedor/entrar",
         element: <LoginFornecedor/>

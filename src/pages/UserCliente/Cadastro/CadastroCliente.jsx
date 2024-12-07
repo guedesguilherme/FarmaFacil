@@ -8,36 +8,85 @@ const CadastroCliente = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [confirmaSenha, setConfirmaSenha] = useState("");
+  const [confirmasenha, setconfirmasenha] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  // const handleCadastro = async (e) => {
+  //   e.preventDefault();
+
+  //   if (senha !== confirmasenha) {
+  //     setError("As senhas não coincidem.");
+  //     return;
+  //   }
+
+  //   const payload = {
+  //     nome,
+  //     email,
+  //     senha,
+  //     confirmasenha,
+  //   }
+
+  //   console.log(payload)
+
+  //   try {
+  //     // Fazendo a requisição para a API
+  //     const response = await axios.post("https://api-cadastro-farmacias.onrender.com/usuarios/auth/register", payload);
+
+  //     // Redirecionar para a página de login após cadastro bem-sucedido
+  //     navigate("/cliente/entrar");
+  //   } catch (error) {
+  //     if (error.response) {
+  //       setError(error.response.data.msg); // Mostra mensagem de erro do back-end
+  //     } else {
+  //       setError("Erro ao conectar ao servidor.");
+  //     }
+  //   }
+  // };
+
+
   const handleCadastro = async (e) => {
     e.preventDefault();
-
-    if (senha !== confirmaSenha) {
+  
+    if (senha !== confirmasenha) {
       setError("As senhas não coincidem.");
       return;
     }
-
+  
+    const payload = {
+      nome,
+      email,
+      senha,
+      confirmasenha
+    };
+  
+    console.log("Enviando para a API:", payload);
+  
     try {
-      // Fazendo a requisição para a API
-      const response = await axios.post("http://localhost:3000/usuarios/auth/register", {
-        nome,
-        email,
-        senha,
-      });
-
-      // Redirecionar para a página de login após cadastro bem-sucedido
+      // Envia com o cabeçalho Content-Type como application/json
+      const response = await axios.post(
+        "https://api-cadastro-farmacias.onrender.com/usuarios/auth/register",
+        payload,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+  
+      // Redireciona após sucesso
       navigate("/cliente/entrar");
     } catch (error) {
       if (error.response) {
-        setError(error.response.data.msg); // Mostra mensagem de erro do back-end
+        console.log("Erro de resposta do servidor:", error.response);
+        setError(error.response.data.msg || "Erro ao cadastrar usuário.");
       } else {
         setError("Erro ao conectar ao servidor.");
       }
     }
   };
+  
+  
 
   return (
     <div className="container">
@@ -98,16 +147,16 @@ const CadastroCliente = () => {
             onChange={(e) => setSenha(e.target.value)}
           />
 
-          <label htmlFor="confirmaSenha" className="labels">
+          <label htmlFor="confirmasenha" className="labels">
             Repita a senha
           </label>
           <input
             type="password"
-            name="confirmaSenha"
+            name="confirmasenha"
             placeholder="Repita a senha definida aqui"
             className="inputs"
-            value={confirmaSenha}
-            onChange={(e) => setConfirmaSenha(e.target.value)}
+            value={confirmasenha}
+            onChange={(e) => setconfirmasenha(e.target.value)}
           />
 
           <div className="manter-conectado">

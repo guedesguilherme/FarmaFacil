@@ -8,9 +8,12 @@ const TableGerenciarProdutos = () => {
     const [produtos, setProdutos] = useState([]);
 
     useEffect(() => {
+
+        const farma_id = localStorage.getItem('id')
+
         const fetchProdutos = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/produtos');
+                const response = await axios.get(`https://api-cadastro-farmacias.onrender.com/produtos/farmacia/${farma_id}`);
                 console.log('Resposta da API:', response.data); // Adicione este log
                 if (Array.isArray(response.data)) {
                     setProdutos(response.data);
